@@ -35,7 +35,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/beach-villa' do
-    'Beach villa'
+    erb(:beach_villa)
   end
 
   get '/city-apartment' do
