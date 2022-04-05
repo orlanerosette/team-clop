@@ -30,6 +30,11 @@ class MakersBnB < Sinatra::Base
     erb :list_space
   end
 
+  post '/list-space' do
+    
+    redirect '/book-space'
+  end
+
   get '/beach-villa' do
     'Beach villa'
   end
