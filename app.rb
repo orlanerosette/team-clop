@@ -26,5 +26,17 @@ class MakersBnB < Sinatra::Base
     'Sign in'
   end
 
+  get '/list-space' do
+    'List a space'
+  end
+
+  get '/beach-villa' do
+    'Beach villa'
+  end
+
+  get '/city-apartment' do
+    'City apartment'
+  end
+
   run! if app_file == $0
 end
