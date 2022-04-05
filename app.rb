@@ -27,7 +27,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/list-space' do
-    'List a space'
+    erb :list_space
   end
 
   get '/beach-villa' do
