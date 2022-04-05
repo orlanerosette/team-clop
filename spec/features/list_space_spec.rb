@@ -13,6 +13,5 @@ feature 'List a space page' do
     fill_in :available_to, with: '20/04/2022'
     click_on 'SUBMIT'
     expect(page.current_path).to eq '/book-space'
-
   end 
 end
