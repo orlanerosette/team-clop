@@ -26,5 +26,22 @@ class MakersBnB < Sinatra::Base
     'Sign in'
   end
 
+  get '/list-space' do
+    erb :list_space
+  end
+
+  post '/list-space' do
+    
+    redirect '/book-space'
+  end
+
+  get '/beach-villa' do
+    erb(:beach_villa)
+  end
+
+  get '/city-apartment' do
+    'City apartment'
+  end
+
   run! if app_file == $0
 end
