@@ -19,9 +19,8 @@ class Account
       Account.new(account_id: account[0]["user_id"], first_name: account[0]["first_name"], last_name: account[0]["last_name"], email: account[0]["email"], password: account[0]["password"])
   end
 
-  def check
-    email = 'will.smith@slap.co.uk'
-    password = 'ilovechrisrock2022' 
+  def check(email:, password:)
     return true if @email == email && @password == password
+    return false
   end
 end

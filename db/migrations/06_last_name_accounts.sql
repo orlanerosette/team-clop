@@ -1,1 +1,1 @@
-ALTER TABLE accounts ADD last_name VARCHAR(20);
+ALTER TABLE accounts ADD last_name VARCHAR(20) NOT NULL;
