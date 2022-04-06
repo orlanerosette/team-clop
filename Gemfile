@@ -2,8 +2,6 @@
 
 source "https://rubygems.org"
 
-# gem "rails"
-
 gem "rspec", "~> 3.11"
 
 gem "sinatra", "~> 2.2"
@@ -11,3 +9,5 @@ gem "sinatra", "~> 2.2"
 gem "sinatra-contrib", "~> 2.2"
 
 gem "capybara", "~> 3.36"
+
+gem "pg"

@@ -10,6 +10,7 @@ class MakersBnB < Sinatra::Base
   get '/' do
     'Welcome to MakersBnB'
     erb :index
+    p ENV
   end
 
   post '/login' do
