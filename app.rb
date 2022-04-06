@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/login'
+require './lib/account'
 
 class MakersBnB < Sinatra::Base
   configure :development do
@@ -12,8 +12,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/login' do
-    @new_user = Login.new(params[:email], params[:password])
-    redirect '/book-space' if @new_user.check
+    @new_user = Account.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
+    redirect '/book-space' if @new_user.check(email: @new_user.email, password:@new_user.password)
     redirect '/'
   end
 
@@ -30,7 +30,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/list-space' do
-    
+    #database
     redirect '/book-space'
   end
 

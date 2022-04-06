@@ -10,10 +10,18 @@
 
   <h1>Welcome</h1>
   <h3>Message</h3>
-
+  <h4>Sign up</h4>
   <form action='/login' method='post'>
+    <label for="first_name">Name </label>
+    <input type='text' name='first_name' placeholder="Enter first name" >
+    <input type='text' name='last_name' placeholder="Enter last name" >
+    <br>
+    <label for="email">Email </label>
     <input type='email' name='email' placeholder='Enter email'>
+    <br>
+    <label for="password">Password </label>
     <input type='password' name='password' placeholder='Enter password'>
+    <br>
     <input type='submit' value='SUBMIT'>
   </form>
 
