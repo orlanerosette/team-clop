@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/login'
+require './lib/account'
 
 class MakersBnB < Sinatra::Base
   configure :development do
@@ -9,7 +9,6 @@ class MakersBnB < Sinatra::Base
 
   get '/' do
     erb :index
-    p ENV
   end
 
   post '/login' do
@@ -31,7 +30,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/list-space' do
-    
+    #database
     redirect '/book-space'
   end
 

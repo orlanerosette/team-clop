@@ -1,0 +1,1 @@
+ALTER TABLE accounts ADD first_name VARCHAR(20);
