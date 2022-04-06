@@ -1,0 +1,1 @@
+CREATE TABLE bookings(booking_id SERIAL PRIMARY KEY, listing_id INT NOT NULL, customer_id INT NOT NULL, booking_start DATE, booking_end DATE, status INT DEFAULT 0, FOREIGN KEY (listing_id)REFERENCES listings (listing_id), FOREIGN KEY (customer_id)REFERENCES accounts(user_id));

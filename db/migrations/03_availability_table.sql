@@ -1,0 +1,1 @@
+CREATE TABLE availability(availability_id SERIAL PRIMARY KEY, listing_id INT NOT NULL,availability_start DATE, availability_end DATE, FOREIGN KEY (listing_id)REFERENCES listings (listing_id));
