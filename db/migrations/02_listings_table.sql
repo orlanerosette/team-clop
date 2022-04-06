@@ -1,0 +1,2 @@
+CREATE TABLE listings(listing_id SERIAL PRIMARY KEY, owner_id INT NOT NULL,name VARCHAR(50) NOT NULL, description VARCHAR(200) NOT NULL, price NUMERIC(10,2)DEFAULT 0, FOREIGN KEY (owner_id)REFERENCES accounts (user_id)
+);
