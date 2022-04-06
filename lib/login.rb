@@ -1,7 +1,7 @@
 class Login
   attr_reader :email, :password
 
-  def initialize (email, password) 
+  def initialize(email, password) 
     @email = email 
     @password = password  
   end
@@ -11,6 +11,4 @@ class Login
     password = 'ilovechrisrock2022' 
     return true if @email == email && @password == password
   end
-
 end
-

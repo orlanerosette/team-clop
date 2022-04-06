@@ -8,7 +8,6 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/' do
-    'Welcome to MakersBnB'
     erb :index
     p ENV
   end
