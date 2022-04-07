@@ -11,17 +11,20 @@ TITLE, DESCRIPTION
 FORM TO BOOK DATES PARAMS :date_from & :date_to
 %>
 
-<form>
+<form action='/register/beach-villa' method='get'>
 <h4>When would you like to stay?</h4>
 <div class="date">
 <br>
-<input type="date" name="date_from">
+<input type="date" name="date_from" min= <%= @beach_availability.availability_start %>>
 <h4>to</h4>
 <br>
-<input type="date" name="date_to">
+<input type="date" name="date_to" max= <%= @beach_availability.availability_end %> >
+
 </div>
   <div class="button-div">
-  <button class="button" onclick="alert('Clop Villa has been booked!')">Book</button>
+  <input type="submit" value="Request to Book" >
+
+  <%# <button class="button" onclick="alert('Clop Villa has been booked!')">Book</button> %>
  </div>
 </form>
 
