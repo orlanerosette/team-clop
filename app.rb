@@ -17,7 +17,7 @@ class MakersBnB < Sinatra::Base
 
   post '/login' do
     @new_user = Account.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
-    redirect '/book-space'
+    redirect '/book_space'
   end
 
   get '/book_space' do
@@ -38,13 +38,9 @@ class MakersBnB < Sinatra::Base
     'Sign up'
   end
 
-  get '/list-space' do
-    erb :list_space
-  end
-
   post '/list-space' do
     #database
-    redirect '/book-space'
+    erb(:list_space)
   end
 
   get '/beach-villa' do
