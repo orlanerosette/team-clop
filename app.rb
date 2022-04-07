@@ -2,11 +2,14 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/account'
 require './lib/listing'
+require 'pg'
 
 class MakersBnB < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
+
+
 
   get '/' do
     erb :index
@@ -14,16 +17,23 @@ class MakersBnB < Sinatra::Base
 
   post '/login' do
     @new_user = Account.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
-    redirect '/book-space' if @new_user.check(email: @new_user.email, password:@new_user.password)
-    redirect '/'
+    redirect '/book-space'
   end
 
   get '/book-space' do
     erb :book_space
   end
 
+  get '/register' do
+    erb :register
+  end
+
   get '/sign-in' do
     'Sign in'
+  end
+
+  get '/sign-up' do
+    'Sign up'
   end
 
   get '/list-space' do
