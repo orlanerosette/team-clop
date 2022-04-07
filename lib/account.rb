@@ -1,3 +1,4 @@
+require 'pg'
 class Account
   attr_reader :account_id, :first_name, :last_name, :email, :password
 
