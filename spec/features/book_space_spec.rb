@@ -16,7 +16,7 @@ feature 'Book space page' do
   scenario 'list a space button exists' do
     visit '/book-space'
     click_on 'List a space'
-    expect(page.current_path).to eq '/list-space'
+    expect(page.current_path).to eq '/register'
   end 
 end
 
