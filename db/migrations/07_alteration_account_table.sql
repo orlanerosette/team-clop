@@ -1,0 +1,1 @@
+ALTER TABLE accounts ALTER password TYPE varchar(50);
