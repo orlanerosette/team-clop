@@ -57,7 +57,6 @@ class MakersBnB < Sinatra::Base
     erb(:my_space)
   end
 
-
   @@listed_spaces = []
 
   post '/listed-space' do
