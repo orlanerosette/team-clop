@@ -20,7 +20,9 @@ class MakersBnB < Sinatra::Base
     redirect '/book-space'
   end
 
-  get '/book-space' do
+  get '/book_space' do
+    @properties = @@listed_spaces
+    p @properties
     erb :book_space
   end
 
@@ -51,6 +53,22 @@ class MakersBnB < Sinatra::Base
 
   get '/city-apartment' do
     'City apartment'
+  end
+
+  get '/my_space' do
+    @properties = @@listed_spaces
+    p @properties
+    erb(:my_space)
+  end
+
+
+  @@listed_spaces = []
+
+  post '/listed-space' do
+   @@listed_spaces << params
+   p @@listed_spaces
+   p params
+   redirect('/book_space')
   end
 
   run! if app_file == $0

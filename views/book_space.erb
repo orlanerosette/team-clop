@@ -30,5 +30,19 @@
       <input type='submit' name="city_apartment" value='Click here'>
     </form>
   </div>
+
+  <% for property in @properties %>
+  <div>
+    <h3><%= property[:property_name] %></h3>
+    <h4><%= property[:description] %></h4>
+    <p><%= property[:price] %></p>
+    <p><%= property[:available_from] %></p>
+    <p><%= property[:available_to] %></p>
+    <form action='/my_space' method='get'>
+      <input type='submit' name="my_space" value='Click here'>
+    </form>
+  </div>
+  <% end %>
+
 </body>
 </html>
