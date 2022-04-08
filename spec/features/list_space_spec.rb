@@ -1,7 +1,7 @@
 
 feature 'List a space page' do
   scenario 'it allows you to add a listing' do
-    visit "/register"
+    visit "/register/list-space"
     fill_in 'first_name', with: 'Will'
     fill_in 'last_name', with: 'Smith'
     fill_in 'email', with: 'willsmith@slap.co.uk'
