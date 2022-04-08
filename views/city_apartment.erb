@@ -3,22 +3,18 @@ TITLE, DESCRIPTION
 %>
 
 <div class="title">
-<h2>Clop Villa, Makers Island</h2>
-<p>A beautiful private villa situated on<br>the northern most coast of Cape Code.</p>
+<h2>City Apartment</h2>
+<p> The advantages of an apartment with the benefits of a hotel</p>
 </div>
 
-<%#  
-FORM TO BOOK DATES PARAMS :date_from & :date_to
-%>
-
-<form action='/register/beach-villa' method='get'>
+<form action='/register/city_apartment' method='get'>
 <h4>When would you like to stay?</h4>
 <div class="date">
 <br>
-<input type="date" name="date_from" min= <%= @beach_availability.availability_start %>>
+<input type="date" name="date_from" min= <%= @city_availability.availability_start %>>
 <h4>to</h4>
 <br>
-<input type="date" name="date_to" max= <%= @beach_availability.availability_end %> >
+<input type="date" name="date_to" max= <%= @city_availability.availability_end %> >
 
 </div>
   <div class="button-div">

@@ -4,45 +4,195 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Space</title>
+  <title>Makers BnB</title>
 </head>
 <body>
+<nav>
+    <div class="nav-links" id="navLinks">
+                    <ul>
+                    <li><a href="index.html">LOGIN</a></li>
+                  <li><a href="/sign-up">SIGN UP</a></li>
+             </ul>
+      </div>
+ </nav>
 
-  <h1>Book a space</h1>
-  <h3>Message</h3>
+  <h1>MAKERS BNB</h1>
+  
+<div class="list_space">
+    <h3>Have a space you'd like to list?</h3>
+    <form action='/register/list-space' method='get'>
+    <input class="btn" type='submit' value='Click here'>
+   </form>
+</div>
 
-  <form action='/register' method='get'>
-    <input type='submit' value='List a space'>
-  </form>
+<h2>Available spaces</h2>
 
+<div class="spaces">
   <div>
     <h3>Beach Villa</h3>
     <h4>A beautiful private villa near the beach.</h4>
+    <p>£147 per night, pp</p>
+    <p>Available between: 2022-06-13 and 2023-01-26</p>
     <form action='/beach-villa' method='get'>
-      <input type='submit' name="beach_villa" value='Click here'>
+      <input class="btn" type='submit' name="beach_villa" value='Click here'>
     </form>
   </div>
 
   <div>
     <h3>City Apartment</h3>
     <h4>A modern studio in the heart of the city.</h4>
+    <p>£280 per night, pp</p>
+    <p>Available between: 2023-11-25 and 2025-05-12</p>
     <form action='/city-apartment' method='get'>
-      <input type='submit' name="city_apartment" value='Click here'>
+      <input class="btn" type='submit' name="city_apartment" value='Click here'>
     </form>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <% for property in @properties %>
   <div>
     <h3><%= property[:property_name] %></h3>
     <h4><%= property[:description] %></h4>
-    <p><%= property[:price] %></p>
-    <p><%= property[:available_from] %></p>
-    <p><%= property[:available_to] %></p>
+    <p>£<%= property[:price] %> per night, pp</p>
+    <p>Available between: <%= property[:available_from] %> and <%= property[:available_to] %></p>
     <form action='/my_space' method='get'>
-      <input type='submit' name="my_space" value='Click here'>
+      <input class="btn" type='submit' name="my_space" value='Click here'>
     </form>
   </div>
   <% end %>
+  
+  </div>
+<style>
 
+* {
+   padding: 0;
+  margin: 0;
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: #023047;
+}
+
+body {
+  background-color: #FFEBCD;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 5px;
+    background: #FB8500;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 70px;
+}
+
+.list_space {
+ padding-top: 15px;
+ text-align: center;
+ font-size: 12px;
+}
+
+.list_space h3 {
+ font-style: italic;
+ padding-bottom: 5px;
+}
+
+
+h2 {
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.spaces {
+  padding-top: 15px;
+  padding-left: 70px;
+}
+
+.spaces h3 {
+  text-decoration: underline;
+  padding-bottom: 5px;
+}
+
+.spaces h4 p {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.spaces .btn {
+margin-left: 200px;
+margin-bottom: 15px;
+margin-top: 10px;
+}
+
+
+
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 5px;
+    background: #023047;
+    position: relative;
+    cursor: pointer;
+    border-radius:10px;
+    border-style: solid;
+}
+
+.btn:hover {
+    border: 2px solid #023047;
+    background: #FB8500;
+    color: #023047;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+</style>
 </body>
 </html>
