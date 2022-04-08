@@ -18,11 +18,7 @@ class MakersBnB < Sinatra::Base
     redirect '/book_space'
   end
 
-  post "/login" do
-    
-    
-    redirect "/book_space"
-  end
+  
 
   get "/book_space" do
     @properties = @@listed_spaces
@@ -38,7 +34,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get "/sign-up" do
-    "Sign up"
+    erb(:signupmain)
   end
 
   post '/list-space' do
