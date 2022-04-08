@@ -43,16 +43,13 @@ class MakersBnB < Sinatra::Base
 
   post '/list-space' do
     @new_user = Account.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
-    binding.irb
     session[:user_id] = @new_user.account_id
     erb(:list_space)
   end
 
   post '/listed-space' do
     @@listed_spaces << params
-    binding.irb
     @new_listing = Listing.create(owner_id: session[:user_id], name: params[:property_name], description: params[:description], price: params[:price])
-    @new_availability = Availability.create(listing_id: @new_listing.listing_id, availability_start: params[:available_from], availability_end: params[:available_to])
     redirect("/book_space")
   end
 
