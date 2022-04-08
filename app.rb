@@ -13,15 +13,10 @@ class MakersBnB < Sinatra::Base
   end
 
   enable :sessions
+  @@listed_spaces = []
 
   get "/" do
     redirect '/book_space'
-  end
-
-  post "/login" do
-    
-    
-    redirect "/book_space"
   end
 
   get "/book_space" do
@@ -42,14 +37,20 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/list-space' do
-    @new_user = Account.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
+    @new_user = Account.create(first_name: params[:first_name], 
+    last_name: params[:last_name], 
+    email: params[:email], 
+    password: params[:password])
     session[:user_id] = @new_user.account_id
     erb(:list_space)
   end
 
   post '/listed-space' do
     @@listed_spaces << params
-    @new_listing = Listing.create(owner_id: session[:user_id], name: params[:property_name], description: params[:description], price: params[:price])
+    @new_listing = Listing.create(owner_id: session[:user_id], 
+    name: params[:property_name], 
+    description: params[:description], 
+    price: params[:price])
     redirect("/book_space")
   end
 
@@ -84,10 +85,6 @@ class MakersBnB < Sinatra::Base
     @properties = @@listed_spaces
     erb(:my_space)
   end
-
-  @@listed_spaces = []
-
-
 
   run! if app_file == $0
 end
