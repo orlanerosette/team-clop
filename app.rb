@@ -61,6 +61,7 @@ class MakersBnB < Sinatra::Base
   @@listed_spaces = []
 
   post '/listed-space' do
+  @@listed_spaces = []
    @@listed_spaces << params
    p @@listed_spaces
    p params
