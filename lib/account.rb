@@ -17,8 +17,15 @@ class Account
     else
       connection = PG.connect(dbname: 'makersbnb')
     end
-      account = connection.exec_params "INSERT INTO accounts (first_name, last_name, email, password) VALUES ($1, $2, $3, $4) RETURNING user_id, first_name, last_name, email, password;", [first_name, last_name, email, password]
-      Account.new(account_id: account[0]["user_id"], first_name: account[0]["first_name"], last_name: account[0]["last_name"], email: account[0]["email"], password: account[0]["password"])
+    account = connection.exec_params "INSERT INTO accounts (first_name, last_name, email, password) 
+    VALUES ($1, $2, $3, $4) 
+    RETURNING user_id, first_name, last_name, email, password;", 
+    [first_name, last_name, email, password]
+    Account.new(account_id: account[0]["user_id"], 
+    first_name: account[0]["first_name"], 
+    last_name: account[0]["last_name"], 
+    email: account[0]["email"], 
+    password: account[0]["password"])
   end
 
   def check(email:, password:)
