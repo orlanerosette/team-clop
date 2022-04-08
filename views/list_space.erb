@@ -4,31 +4,148 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>List a space</title>
+  <title>MAKERS BNB</title>
 </head>
 <body>
+<nav>
+    <div class="nav-links" id="navLinks">
+                    <ul>
+                    <li><a href="index.html">LOGIN</a></li>
+                  <li><a href="/sign-up">SIGN UP</a></li>
+             </ul>
+      </div>
+ </nav>
+  <h1>MAKERS BNB</h1>
 
-  <h1>List a space</h1>
-  <h3>Message</h3>
+  <h3>List a space</h3>
 
+
+<div class="container">
+<div class="form">
   <form action='/listed-space' method='post'>
-    <label for="property_name">Property Name </label>
-    <input type='text' name='property_name' placeholder="Enter property's name" >
+    <input type='text' name='property_name' placeholder="Property Name" >
     <br>
-    <label for="description">Description </label>
-    <input type='text' name='description' maxlength="200" style="width: 250px; height: 150px;" placeholder="Enter short description" >
+    <input type='text' name='description' maxlength="200" style="width: px; height: 150px;" placeholder="Enter some details" >
     <br>
-    <label for="price">Price per night £</label>
-    <input type='number' name='price'>
+    <input type='number' name='price' placeholder="Price per night">
     <br>
-    <label for="available_from">Available from (DD/MM/YYYY)</label>
     <input type='date' name='available_from'>
     <br>
-    <label for="available_to">Available to (DD/MM/YYYY)</label>
     <input type='date' name='available_to'>
     <br>
-    <input type='submit' value='SUBMIT'>
+    <input class="btn" type='submit' value='SUBMIT'>
   </form>
+</div>
+</div>
+
+<style>
+
+* {
+   padding: 0;
+  margin: 0;
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: #023047;
+}
+
+body {
+  background-color: #FFEBCD;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 5px;
+    background: #FB8500;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 70px;
+}
+
+h3 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.container {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.form input {
+  padding: 5px;
+  margin: 5px;
+  padding: 10px;
+  border-radius:10px;
+  border-style: solid;
+  text-align: center;
+}
+
+.form-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 5px;
+    background: #023047;
+    position: relative;
+    cursor: pointer;
+    border-radius:10px;
+    border-style: solid;
+}
+
+.btn:hover {
+    border: 2px solid #023047;
+    background: #FB8500;
+    color: #023047;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+</style>
+
+
 
 </body>
 </html>

@@ -2,10 +2,11 @@
 TITLE, DESCRIPTION 
 %>
 
-<div class="title">
+
+<h1>MAKERS BNB</h1>
+<div class="spaces">
 <h2>City Apartment</h2>
 <p> The advantages of an apartment with the benefits of a hotel</p>
-</div>
 
 <form action='/register/city_apartment' method='get'>
 <h4>When would you like to stay?</h4>
@@ -18,37 +19,38 @@ TITLE, DESCRIPTION
 
 </div>
   <div class="button-div">
-  <input type="submit" value="Request to Book" >
+  <input class="btn" type="submit" value="Request to Book" >
 
   <%# <button class="button" onclick="alert('Clop Villa has been booked!')">Book</button> %>
  </div>
 </form>
-
+</div>
 <%#  
 PICTURES ON THE BOTTOM OF THE PAGE
 %>
 
-    <%# <section class="pictures">
+
+   <section class="pictures">
         <div class="row">
             <div class="pictures-col">
-                <img src="https://www.europe-hotels.org/wp-content/uploads/2020/02/Maui-Bar.jpg">
+                <img src="https://media-cdn.tripadvisor.com/media/vr-splice-j/06/77/3b/92.jpg">
                 <div class="layer">
-                    <h3>BAR</h3>
+                    <h3>VIEW</h3>
                 </div>
             </div>
             <div class="pictures-col">
-                <img src="https://leisurepools.eu/wp-content/uploads/2020/06/best-type-of-swimming-pool-for-my-home_2.jpg">
+                <img src="https://thumbs.cityrealty.com/assets/smart/736x/webp/1/16/1655f4e3904fb79cb987ab7755d2b3f4b8f37f88/1-city-point.jpg">
                 <div class="layer">
-                    <h3>POOL</h3>
+                    <h3>LIVING SPACE</h3>
                 </div>
             </div>
                <div class="pictures-col">
-                <img src="https://cdn.thewirecutter.com/wp-content/media/2021/06/howtoshopforhottubs-2048px-hotspringspas.jpg">
+                <img src="https://www.ahstatic.com/photos/6225_ho_00_p_1024x768.jpg">
                 <div class="layer">
-                    <h3>HOT TUB</h3>
+                    <h3>COMPLEX</h3>
                 </div>
             </div>
-    </section> %>
+    </section>
 
 <%#  
 STYLES
@@ -56,90 +58,101 @@ STYLES
 
 <style>
 * {
-    padding: 0;
-    margin: 0;
+padding: 0;
+margin: 0;
+font-family: "Lucida Console", "Courier New", monospace;
+color: #023047;
 }
 
 body {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://stjohn-villarentals.com/wp-content/uploads/2016/12/Mare-Blu-villa-pool-deck-seating.jpg);
-    background-position: center;
-    background-size: cover;
+  background-color: #FFEBCD;
 }
 
-.title {
-    margin-left: 25%;
-    margin-right: 25%;
-    padding: 20px 0;
-    background: rgba(240, 240, 240, 0.3);
-    border-bottom-left-radius: 80px;
-    border-bottom-right-radius: 80px;
-    border-top-left-radius: 80px;
-    border-top-right-radius: 80px;
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.title h2, p, h4{
-    font-family: "Lucida Console", "Courier New", monospace;
-    text-align: center;
-    font-weight: 500;
-    color: white;
+.nav-links {
+    flex: 1;
+    text-align: right;
 }
 
-.title h2 {
-font-size: 50px;
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
 }
 
-.title p {
-padding-top: 15px;
-font-size: 25px;
-letter-spacing: 1px;
+.nav-links ul li a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 5px;
+    background: #FB8500;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 70px;
 }
 
 h4 {
-padding-top: 15px;
+  padding-top: 30px;
+  text-align: center;
+}
+.spaces {
+  text-align: center;
 
 }
 
-.button-div {
-    margin-top: 1%;
-    text-align: center;
+.spaces h4 p {
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 
-.button {
-    font-family: "Lucida Console", "Courier New", monospace;
-    text-align: center;
+.spaces .btn {
+    margin-top: 15px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
     color: white;
-    background: rgba(240, 240, 240, 0.3);
-    border-bottom-left-radius: 80px;
-    border-bottom-right-radius: 80px;
-    border-top-left-radius: 80px;
-    border-top-right-radius: 80px;
-    padding: 10px;
-    border-width: 2px;
-    font-size: 25px;
+    border: 1px solid white;
+    padding: 12px 34px;
+    background: #023047;
+    position: relative;
     cursor: pointer;
+    border-radius:10px;
+    border-style: solid;
 }
 
-.button:hover {
-   color: white;
-   background: rgba(0, 0, 0, 0.3);
+.btn:hover {
+    border: 2px solid #023047;
+    background: #FB8500;
+    color: #023047;
+    font-weight: 700;
+    transition: 0.5s;
 }
 
-.date {
-    text-align: center;
-    background: rgba(240, 240, 240, 0.3);
-    border-bottom-left-radius: 80px;
-    border-bottom-right-radius: 80px;
-    border-top-left-radius: 80px;
-    border-top-right-radius: 80px;
-    margin-left: 40%;
-    margin-right: 40%;
-    margin-top: 2%;
-    margin-bottom:2%;
-    padding-top: 1%;
-    padding-bottom: 2%;
-}
-
-/* 
 .row {
     margin-top: 5%;
     display: flex;
@@ -200,6 +213,67 @@ padding-top: 15px;
     opacity: 1;
     font-family: "Lucida Console", "Courier New", monospace;
 
-} */
+}
+
+.row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pictures {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding-top: 5px;
+    display: flex;
+}
+
+.pictures-col {
+    flex-basis: 32%;
+    border-radius: 10%;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pictures-col img {
+    width: 100%;
+    height: 100%;
+}
+
+.layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.layer:hover {
+    background: rgba(226, 226, 226, 0.4);
+}
+
+.layer h3 {
+    width: 100%;
+    font-weight: 500;
+    color: black;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    font-family: "Lucida Console", "Courier New", monospace;
+    transition: 0.5s;
+}
+
+.layer:hover h3 {
+    bottom: 49%;
+    opacity: 1;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
 
 </style>
