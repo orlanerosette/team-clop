@@ -33,7 +33,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get "/sign-up" do
-    "Sign up"
+    erb(:signupmain)
   end
 
   post '/list-space' do
