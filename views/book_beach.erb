@@ -1,50 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAKERS BNB</title>
-</head>
+  <title>Beach Villa Request Confirmation</title>
+ </head>
+
 <body>
+
 <nav>
     <div class="nav-links" id="navLinks">
-                    <ul>
-                    <li><a href="index.html">LOGIN</a></li>
+                   <ul>
+                   <li><a href="index.html">LOGIN</a></li>
                   <li><a href="/sign-up">SIGN UP</a></li>
              </ul>
       </div>
  </nav>
-  <h1>MAKERS BNB</h1>
 
-  <h3>List a space</h3>
+  <h1>Your Booking Request Details</h1>
+ 
+ <h4>Sign up for a free account!</h4>
+  <div class="container">
+  <div class="form">
+  <br>
+  <form action="/book_space" method="post">
+    <input type="text" name="first_name" placeholder="Enter first name">
+    <br>
+    <input type="text" name="last_name" placeholder="Enter last name">
+    <br>
+    <input type="email" name="email" placeholder="Enter email">
+    <br>
+    <input type="password" name="password" placeholder="Enter password">
+    <br>
+    <div class="form-button">
+    <input class="btn" type="submit" value="SUBMIT">
+    </div>
+    </form></div>
+</div>
 
 
-<div class="container">
-<div class="form">
-  <form action='/listed-space' method='post'>
-    <input type='text' name='property_name' placeholder="Property Name" >
-    <br>
-    <input type='text' name='description' maxlength="200" style="width: px; height: 150px;" placeholder="Enter some details" >
-    <br>
-    <input type='number' name='price' placeholder="Price per night">
-    <br>
-    <input type='date' name='available_from'>
-    <br>
-    <input type='date' name='available_to'>
-    <br>
-    <input class="btn" type='submit' value='SUBMIT'>
+
+ <section class="footer">
+      <h4>Already have an account?</h4>
+  <form action="/sign-in" method="get">
+    <input class="btn" type="submit" value="SIGN IN">
   </form>
-</div>
-</div>
+</section>
+
 
 <style>
 
 * {
-   padding: 0;
-  margin: 0;
-  font-family: "Lucida Console", "Courier New", monospace;
-  color: #023047;
+padding: 0;
+margin: 0;
+font-family: "Lucida Console", "Courier New", monospace;
+color: #023047;
 }
 
 body {
@@ -89,13 +99,14 @@ nav {
     width: 100%;
 }
 
+
 h1 {
   text-align: center;
   font-size: 70px;
 }
 
-h3 {
-  font-size: 25px;
+h4 {
+  padding-top: 30px;
   text-align: center;
 }
 
@@ -115,19 +126,30 @@ justify-content: center;
 }
 
 .form-button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 
+.footer {
+width: 100%;
+text-align: center;
+padding: 30px 0;
+}
+
+.footer h4 {
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
 
 .btn {
     display: inline-block;
     text-decoration: none;
     color: white;
     border: 1px solid white;
-    padding: 5px 5px;
+    padding: 12px 34px;
     background: #023047;
     position: relative;
     cursor: pointer;
@@ -144,8 +166,3 @@ justify-content: center;
 }
 
 </style>
-
-
-
-</body>
-</html>
