@@ -69,16 +69,23 @@ class MakersBnB < Sinatra::Base
 
   end
 
-  get '/city-apartment' do
-    'City apartment'
-  end
-
   get "/beach-villa" do
     erb(:beach_villa)
   end
 
   get "/city-apartment" do
-    "City apartment"
+    @city_account = Default.account
+    @city_listing = Default.city_apartment_listing
+    @city_availability = Default.city_apartment_availability
+    erb(:city_apartment)
+  end
+
+  get '/register/city-apartment' do
+    erb :register_city
+  end
+
+  post '/book-city_apartment' do
+
   end
 
   get "/my_space" do
