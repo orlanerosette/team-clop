@@ -1,8 +1,10 @@
-require "sinatra/base"
-require "sinatra/reloader"
-require "./lib/account"
-require "./lib/listing"
-require "pg"
+
+require 'sinatra/base'
+require 'sinatra/reloader'
+require './lib/account'
+require './lib/listing'
+require './lib/availability'
+require 'pg'
 
 class MakersBnB < Sinatra::Base
   configure :development do
